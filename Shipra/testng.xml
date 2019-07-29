@@ -24,7 +24,7 @@
 		</test>
 
 		<test name="FirefoxTest">
-			<parameter name="browser" value="Firefox" />
+			<parameter name="browser" value="Chrome" />
 			<classes>
 				<class name="com.example.Flight"></class>
 			</classes>
