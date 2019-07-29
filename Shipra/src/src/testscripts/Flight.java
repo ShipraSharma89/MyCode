@@ -28,8 +28,8 @@ public class Flight {
 		//Check if parameter passed from TestNG is 'firefox'
 		if(sBrowser.equalsIgnoreCase("Firefox")){
 		//create firefox instance
-			System.setProperty("webdriver.gecko.driver", "./test-data/geckodriver.exe");
-			driver = new FirefoxDriver();
+			//System.setProperty("webdriver.gecko.driver", "./test-data/geckodriver.exe");
+			//driver = new FirefoxDriver();
 		}
 		//Check if parameter passed as 'chrome'
 		else if(sBrowser.equalsIgnoreCase("Chrome")){
