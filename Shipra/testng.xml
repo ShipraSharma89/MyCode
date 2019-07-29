@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite" parallel="tests">
+
+  <test name="FirefoxTest">
+  <parameter name="browser" value="Firefox"/>
+    <classes>
+      <class name="testscripts.Flight"/>
+    </classes>
+  </test>
+  
+  <test name="ChromeTest">
+  <parameter name="browser" value="Chrome"/>
+  <classes>
+      <class name="testscripts.Flight"/>
+    </classes>
+  </test>
+</suite> 
+		<!-- <test name="ChromeTest">
+			<parameter name="browser" value="Chrome" />
+			<classes>
+				<class name="com.example.Flight"></class>
+			</classes>
+		</test>
+
+		<test name="FirefoxTest">
+			<parameter name="browser" value="Firefox" />
+			<classes>
+				<class name="com.example.Flight"></class>
+			</classes>
+		</test> -->
+		
+		<!-- <groups>
+			<dependencies>
+				<group name="regression" depends-on="sanity" />
+			</dependencies>
+		</groups> -->
+
+
+
+
