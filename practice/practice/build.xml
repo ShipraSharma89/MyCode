@@ -1,68 +1,70 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- WARNING: Eclipse auto-generated file.
-              Any modifications will be overwritten.
-              To include a user specific buildfile here, simply create one in the same
-              directory with the processing instruction <?eclipse.ant.import?>
-              as the first entry and export the buildfile again. --><project basedir="." default="build" name="practice">
-    <property environment="env"/>
-    <property name="debuglevel" value="source,lines,vars"/>
-    <property name="target" value="1.8"/>
-    <property name="source" value="1.8"/>
-    <path id="TestNG.libraryclasspath">
-        <pathelement location="C:/Jars/eclipse/plugins/org.testng_6.14.3.r201802240500.jar"/>
-        <pathelement location="C:/Jars/eclipse/plugins/com.beust.jcommander_1.72.0.jar"/>
-        <pathelement location="C:/Jars/eclipse/plugins/org.apache-extras.beanshell.bsh_2.0.0.b6.jar"/>
-        <pathelement location="C:/Jars/eclipse/plugins/org.yaml.snakeyaml_1.17.0.jar"/>
-    </path>
-    <path id="practice.classpath">
-        <pathelement location="bin"/>
-        <path refid="TestNG.libraryclasspath"/>
-        <pathelement location="jars/selenium/client-combined-3.141.59.jar"/>
-        <pathelement location="jars/selenium/client-combined-3.141.59-sources.jar"/>
-        <pathelement location="jars/selenium/libs/byte-buddy-1.8.15.jar"/>
-        <pathelement location="jars/selenium/libs/commons-exec-1.3.jar"/>
-        <pathelement location="jars/selenium/libs/guava-25.0-jre.jar"/>
-        <pathelement location="jars/selenium/libs/okhttp-3.11.0.jar"/>
-        <pathelement location="jars/selenium/libs/okio-1.14.0.jar"/>
-    </path>
-    <target name="init">
-        <mkdir dir="bin"/>
-        <copy includeemptydirs="false" todir="bin">
-            <fileset dir="src">
-                <exclude name="**/*.java"/>
-            </fileset>
-        </copy>
-    </target>
-    <target name="clean">
-        <delete dir="bin"/>
-    </target>
-    <target depends="clean" name="cleanall"/>
-    <target depends="build-subprojects,build-project" name="build"/>
-    <target name="build-subprojects"/>
-    <target depends="init" name="build-project">
-        <echo message="${ant.project.name}: ${ant.file}"/>
-        <javac debug="true" debuglevel="${debuglevel}" destdir="bin" includeantruntime="false" source="${source}" target="${target}">
-            <src path="src"/>
-            <classpath refid="practice.classpath"/>
-        </javac>
-    </target>
-    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
-    <target description="copy Eclipse compiler jars to ant lib directory" name="init-eclipse-compiler">
-        <copy todir="${ant.library.dir}">
-            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
-        </copy>
-        <unzip dest="${ant.library.dir}">
-            <patternset includes="jdtCompilerAdapter.jar"/>
-            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
-        </unzip>
-    </target>
-    <target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
-        <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
-        <antcall target="build"/>
-    </target>
-    <target name="xmlRead">
-        <java classname="com.example.xmlRead" failonerror="true" fork="yes">
-            <classpath refid="practice.classpath"/>
-        </java>
-    </target>
+<project name="TestAnt" default="run" basedir=".">
+
+<property environment="env" />
+<property name="ws.home" value="${basedir}" />
+<property name="ws.build" value="${ws.home}/build" />
+<property name="ws.srchome" value="${ws.home}/src" />
+<property name="ws.jars" value="${ws.home}/lib123" />
+<property name="ws.testoutput" value="${ws.home}/test-output" />
+<property name="ws.tempdatafolder" value="${ws.home}/temp-data" />
+
+<target name="setClassPath" unless="test.classpath">
+<path id="classpath_jars">
+<fileset dir="${ws.jars}" includes="**/*.jar" />
+</path>
+<pathconvert pathsep=":" property="test.classpath" refid="classpath_jars" />
+</target>
+
+<target name="init" depends="setClassPath">
+<echo> Initialize Ant</echo>
+<tstamp>
+<format property="start.time" pattern="MM/dd/yyyy hh:mm aa" />
+</tstamp>
+<condition property="ANT" value="${env.ANT_HOME}/bin/ant.bat" else="${env.ANT_HOME}/bin/ant">
+<os family="windows" />
+</condition>
+	<taskdef name="testng" classname="org.testng.TestNGAntTask">
+	<classpath>
+	<pathelement location="lib123/testng-6.0.jar"/>
+	</classpath>
+	</taskdef>
+</target>
+
+<target name="delete" depends="init">
+<echo> Deleting directory </echo>
+<delete dir="${ws.build}">
+</delete>
+<delete dir="${ws.testoutput}">
+</delete>
+<delete dir="${ws.jars}" excludes="**.jar">
+</delete>
+<delete dir="${ws.tempdatafolder}">
+</delete>
+</target>
+
+<target name="create" depends="delete">
+<echo> Creating directories </echo>
+<mkdir dir="${ws.build}" />
+<mkdir dir="${ws.jars}" />
+<mkdir dir="${ws.testoutput}" />
+<mkdir dir="${ws.tempdatafolder}" />
+</target>
+
+<target name="copyClassFiles" depends="create">
+<echo>Compile java files</echo>
+<javac includeantruntime="true" debug="true" destdir="${ws.build}" srcdir="${ws.srchome}" classpath="${test.classpath}" classpathref="classpath_jars">
+</javac>
+<echo>Copying .class files except .java files</echo>
+<copy todir="${ws.build}">
+<fileset dir="${ws.srchome}" excludes="**/*.java" />
+</copy>
+</target>
+
+<target name="run" depends="copyClassFiles">
+<echo>Taking testcases from testng.xml</echo>
+<testng classpath="${test.classpath}:${ws.build}" suitename="suite1">
+<xmlfileset dir="${ws.home}" includes="testng.xml" />
+</testng>
+
+</target>
 </project>

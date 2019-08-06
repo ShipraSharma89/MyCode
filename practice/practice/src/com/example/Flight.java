@@ -20,24 +20,34 @@ public class Flight {
 	String appUrl = "http://www.newtours.demoaut.com/";
 	//String chromePath = System.getProperty("user.dir") + "/test-data/chromedriver.exe";
 	
+	
+	@Parameters({"browsername"})
 	@BeforeClass
-	@Parameters("browser")
-	public void setup(String sBrowser) throws Exception{
-		System.out.println(sBrowser);
+	public void setup(String browsername) throws Exception{
+		System.out.println(browsername);
 		System.out.println("-----------------------------");
 		//Check if parameter passed from TestNG is 'firefox'
-		if(sBrowser.equalsIgnoreCase("Firefox")){
+		if(browsername.equalsIgnoreCase("Firefox")){
 		//create firefox instance
-			System.setProperty("webdriver.gecko.driver", "./test-data/geckodriver.exe");
-			driver = new FirefoxDriver();
+			System.out.println("f1");
+			System.setProperty("webdriver.gecko.driver", "test-data/geckodriver.exe");
+			//DesiredCapabilities dc = new DesiredCapabilities();
+			//dc.setCapability("marionatte", false);
+			//FirefoxOptions opt = new FirefoxOptions();
+			//opt.merge(dc);
+			driver =  new FirefoxDriver();
+			System.out.println("f2");
 		}
 		//Check if parameter passed as 'chrome'
-		else if(sBrowser.equalsIgnoreCase("Chrome")){
-			System.setProperty("webdriver.chrome.driver", "./test-data/chromedriver.exe");
+		else if(browsername.equalsIgnoreCase("Chrome")){
+			System.out.println("c1");
+			System.setProperty("webdriver.chrome.driver", "test-data/chromedriver75.exe");
 			driver = new ChromeDriver();
+			System.out.println("c2");
 	    }
 		
 		driver.get(appUrl);
+		System.out.println("get");
 	}
 	
 	/*
@@ -54,21 +64,18 @@ public class Flight {
 		Assert.assertEquals(actualTitle, expectedTitle); 
 	}
 
-	@Test(groups ="regression")
-	public void register(){
-
-		driver.findElement(By.linkText("REGISTER")).click() ;
-		String expectedoutput ="Register: Mercury Tours";
-		String actualoutput= driver.getTitle();
-		Assert.assertEquals(actualoutput, expectedoutput); }
-
-	@Test (groups ="sanity")
-	public void support() {
-		driver.findElement(By.linkText("SUPPORT")).click() ;
-		String expected ="Under Construction: Mercury Tours";
-		String actual = driver.getTitle();
-		Assert.assertEquals(actual, expected); 
-	}
+	
+	  @Test(groups ="regression") public void register(){
+	  
+	  driver.findElement(By.linkText("REGISTER")).click() ; String expectedoutput
+	  ="Register: Mercury Tours"; String actualoutput= driver.getTitle();
+	  Assert.assertEquals(actualoutput, expectedoutput); }
+	  
+	  @Test (groups ="sanity") public void support() {
+	  driver.findElement(By.linkText("SUPPORT")).click() ; String expected
+	  ="Under Construction: Mercury Tours"; String actual = driver.getTitle();
+	  Assert.assertEquals(actual, expected); }
+	 
 
 	@AfterMethod 
 	public void goBackToHomepage ( ) {
@@ -82,5 +89,11 @@ public class Flight {
 
 }
 
-
-
+/*cmd
+ * ant -version
+ * cd "E:\my selenium project\practice_new"
+ * E:
+ 
+ant -find build.xml
+ant -build build.xml
+*/

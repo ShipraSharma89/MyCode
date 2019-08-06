@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="4" passed="4">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite" duration-ms="18040" started-at="2019-07-29T11:49:01Z" finished-at="2019-07-29T11:49:19Z">
+    <groups>
+      <group name="regression">
+        <method signature="Flight.register()[pri:0, instance:testscripts.Flight@33e5ccce]" name="register" class="testscripts.Flight"/>
+        <method signature="Flight.register()[pri:0, instance:testscripts.Flight@c39f790]" name="register" class="testscripts.Flight"/>
+      </group> <!-- regression -->
+      <group name="sanity">
+        <method signature="Flight.support()[pri:0, instance:testscripts.Flight@33e5ccce]" name="support" class="testscripts.Flight"/>
+        <method signature="Flight.support()[pri:0, instance:testscripts.Flight@c39f790]" name="support" class="testscripts.Flight"/>
+      </group> <!-- sanity -->
+    </groups>
+    <test name="ChromeTest" duration-ms="12570" started-at="2019-07-29T11:49:01Z" finished-at="2019-07-29T11:49:14Z">
+      <class name="testscripts.Flight">
+        <test-method status="PASS" signature="setup(java.lang.String)[pri:0, instance:testscripts.Flight@c39f790]" name="setup" is-config="true" duration-ms="8223" started-at="2019-07-29T04:49:01Z" finished-at="2019-07-29T04:49:10Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="verifyHomepageTitle()[pri:0, instance:testscripts.Flight@c39f790]" name="verifyHomepageTitle" is-config="true" duration-ms="20" started-at="2019-07-29T04:49:10Z" finished-at="2019-07-29T04:49:10Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyHomepageTitle -->
+        <test-method status="PASS" signature="register()[pri:0, instance:testscripts.Flight@c39f790]" name="register" duration-ms="1013" started-at="2019-07-29T04:49:10Z" finished-at="2019-07-29T04:49:11Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- register -->
+        <test-method status="PASS" signature="goBackToHomepage()[pri:0, instance:testscripts.Flight@c39f790]" name="goBackToHomepage" is-config="true" duration-ms="983" started-at="2019-07-29T04:49:11Z" finished-at="2019-07-29T04:49:12Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- goBackToHomepage -->
+        <test-method status="PASS" signature="verifyHomepageTitle()[pri:0, instance:testscripts.Flight@c39f790]" name="verifyHomepageTitle" is-config="true" duration-ms="9" started-at="2019-07-29T04:49:12Z" finished-at="2019-07-29T04:49:12Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyHomepageTitle -->
+        <test-method status="PASS" signature="support()[pri:0, instance:testscripts.Flight@c39f790]" name="support" duration-ms="1030" started-at="2019-07-29T04:49:12Z" finished-at="2019-07-29T04:49:13Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- support -->
+        <test-method status="PASS" signature="goBackToHomepage()[pri:0, instance:testscripts.Flight@c39f790]" name="goBackToHomepage" is-config="true" duration-ms="789" started-at="2019-07-29T04:49:13Z" finished-at="2019-07-29T04:49:14Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- goBackToHomepage -->
+        <test-method status="PASS" signature="terminateBrowser()[pri:0, instance:testscripts.Flight@c39f790]" name="terminateBrowser" is-config="true" duration-ms="488" started-at="2019-07-29T04:49:14Z" finished-at="2019-07-29T04:49:14Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- terminateBrowser -->
+      </class> <!-- testscripts.Flight -->
+    </test> <!-- ChromeTest -->
+    <test name="FirefoxTest" duration-ms="18040" started-at="2019-07-29T11:49:01Z" finished-at="2019-07-29T11:49:19Z">
+      <class name="testscripts.Flight">
+        <test-method status="PASS" signature="setup(java.lang.String)[pri:0, instance:testscripts.Flight@33e5ccce]" name="setup" is-config="true" duration-ms="11169" started-at="2019-07-29T04:49:01Z" finished-at="2019-07-29T04:49:13Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Firefox]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="verifyHomepageTitle()[pri:0, instance:testscripts.Flight@33e5ccce]" name="verifyHomepageTitle" is-config="true" duration-ms="13" started-at="2019-07-29T04:49:13Z" finished-at="2019-07-29T04:49:13Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyHomepageTitle -->
+        <test-method status="PASS" signature="register()[pri:0, instance:testscripts.Flight@33e5ccce]" name="register" duration-ms="1046" started-at="2019-07-29T04:49:13Z" finished-at="2019-07-29T04:49:14Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- register -->
+        <test-method status="PASS" signature="goBackToHomepage()[pri:0, instance:testscripts.Flight@33e5ccce]" name="goBackToHomepage" is-config="true" duration-ms="666" started-at="2019-07-29T04:49:14Z" finished-at="2019-07-29T04:49:14Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- goBackToHomepage -->
+        <test-method status="PASS" signature="verifyHomepageTitle()[pri:0, instance:testscripts.Flight@33e5ccce]" name="verifyHomepageTitle" is-config="true" duration-ms="3" started-at="2019-07-29T04:49:14Z" finished-at="2019-07-29T04:49:14Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyHomepageTitle -->
+        <test-method status="PASS" signature="support()[pri:0, instance:testscripts.Flight@33e5ccce]" name="support" duration-ms="1211" started-at="2019-07-29T04:49:14Z" finished-at="2019-07-29T04:49:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- support -->
+        <test-method status="PASS" signature="goBackToHomepage()[pri:0, instance:testscripts.Flight@33e5ccce]" name="goBackToHomepage" is-config="true" duration-ms="765" started-at="2019-07-29T04:49:16Z" finished-at="2019-07-29T04:49:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- goBackToHomepage -->
+        <test-method status="PASS" signature="terminateBrowser()[pri:0, instance:testscripts.Flight@33e5ccce]" name="terminateBrowser" is-config="true" duration-ms="3161" started-at="2019-07-29T04:49:16Z" finished-at="2019-07-29T04:49:19Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- terminateBrowser -->
+      </class> <!-- testscripts.Flight -->
+    </test> <!-- FirefoxTest -->
+  </suite> <!-- Suite -->
+</testng-results>
