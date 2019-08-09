@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="12214" started-at="2019-08-09T10:10:10Z" finished-at="2019-08-09T10:10:22Z">
+  <suite name="Suite" duration-ms="9581" started-at="2019-08-09T12:14:21Z" finished-at="2019-08-09T12:14:30Z">
     <groups>
     </groups>
-    <test name="ChromeTest" duration-ms="12214" started-at="2019-08-09T10:10:10Z" finished-at="2019-08-09T10:10:22Z">
+    <test name="ChromeTest" duration-ms="9581" started-at="2019-08-09T12:14:21Z" finished-at="2019-08-09T12:14:30Z">
       <class name="test_Scripts.Sdx_task">
-        <test-method status="PASS" signature="setup(java.lang.String)[pri:0, instance:test_Scripts.Sdx_task@4b6995df]" name="setup" is-config="true" duration-ms="9738" started-at="2019-08-09T03:10:10Z" finished-at="2019-08-09T03:10:20Z">
+        <test-method status="PASS" signature="setup(java.lang.String)[pri:0, instance:test_Scripts.Sdx_task@7dc7cbad]" name="setup" is-config="true" duration-ms="6966" started-at="2019-08-09T05:14:21Z" finished-at="2019-08-09T05:14:28Z">
           <params>
             <param index="0">
               <value>
@@ -18,15 +18,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="Homepage_DemoFri_WeB()[pri:0, instance:test_Scripts.Sdx_task@4b6995df]" name="Homepage_DemoFri_WeB" duration-ms="1906" started-at="2019-08-09T03:10:20Z" finished-at="2019-08-09T03:10:22Z">
+        <test-method status="PASS" signature="Homepage_DemoFri_WeB()[pri:0, instance:test_Scripts.Sdx_task@7dc7cbad]" name="Homepage_DemoFri_WeB" duration-ms="2061" started-at="2019-08-09T05:14:28Z" finished-at="2019-08-09T05:14:30Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Homepage_DemoFri_WeB -->
-        <test-method status="PASS" signature="Verify_opinion_section()[pri:0, instance:test_Scripts.Sdx_task@4b6995df]" name="Verify_opinion_section" duration-ms="563" started-at="2019-08-09T03:10:22Z" finished-at="2019-08-09T03:10:22Z">
+        <test-method status="PASS" signature="Verify_opinion_section()[pri:0, instance:test_Scripts.Sdx_task@7dc7cbad]" name="Verify_opinion_section" duration-ms="544" started-at="2019-08-09T05:14:30Z" finished-at="2019-08-09T05:14:30Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Verify_opinion_section -->
-        <test-method status="PASS" signature="terminateBrowser()[pri:0, instance:test_Scripts.Sdx_task@4b6995df]" name="terminateBrowser" is-config="true" duration-ms="0" started-at="2019-08-09T03:10:22Z" finished-at="2019-08-09T03:10:22Z">
+        <test-method status="PASS" signature="terminateBrowser()[pri:0, instance:test_Scripts.Sdx_task@7dc7cbad]" name="terminateBrowser" is-config="true" duration-ms="1" started-at="2019-08-09T05:14:30Z" finished-at="2019-08-09T05:14:30Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- terminateBrowser -->
