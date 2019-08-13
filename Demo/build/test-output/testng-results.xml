@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="2" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite" duration-ms="8635" started-at="2019-08-13T08:52:41Z" finished-at="2019-08-13T08:52:50Z">
+    <groups>
+    </groups>
+    <test name="ChromeTest" duration-ms="8635" started-at="2019-08-13T08:52:41Z" finished-at="2019-08-13T08:52:50Z">
+      <class name="test_Scripts.Sdx_task">
+        <test-method status="PASS" signature="setup(java.lang.String)[pri:0, instance:test_Scripts.Sdx_task@4b6995df]" name="setup" is-config="true" duration-ms="5717" started-at="2019-08-13T01:52:41Z" finished-at="2019-08-13T01:52:47Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="Homepage_DemoFri_WeB()[pri:0, instance:test_Scripts.Sdx_task@4b6995df]" name="Homepage_DemoFri_WeB" duration-ms="2283" started-at="2019-08-13T01:52:47Z" finished-at="2019-08-13T01:52:49Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Homepage_DemoFri_WeB -->
+        <test-method status="PASS" signature="Verify_opinion_section()[pri:0, instance:test_Scripts.Sdx_task@4b6995df]" name="Verify_opinion_section" duration-ms="630" started-at="2019-08-13T01:52:49Z" finished-at="2019-08-13T01:52:50Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Verify_opinion_section -->
+        <test-method status="PASS" signature="terminateBrowser()[pri:0, instance:test_Scripts.Sdx_task@4b6995df]" name="terminateBrowser" is-config="true" duration-ms="0" started-at="2019-08-13T01:52:50Z" finished-at="2019-08-13T01:52:50Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- terminateBrowser -->
+      </class> <!-- test_Scripts.Sdx_task -->
+    </test> <!-- ChromeTest -->
+  </suite> <!-- Suite -->
+</testng-results>
